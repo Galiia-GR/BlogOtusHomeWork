@@ -1,0 +1,78 @@
+{
+  "name": "BlogOtusHomeWork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . && prettier --check . && stylelint \"**/*.css\"",
+    "lint:fix": "eslint . --fix && prettier --write . && stylelint \"**/*.css\" --fix",
+    "build": "webpack build --node-env production",
+    "dev": "webpack serve --open",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Galiia-GR/BlogOtusHomeWork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Galiia-GR/BlogOtusHomeWork/issues"
+  },
+  "homepage": "https://github.com/Galiia-GR/BlogOtusHomeWork#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@types/jest": "^27.0.2",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.3.1",
+    "cssnano": "^5.0.15",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-node": "^11.1.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "jest-image-snapshot": "^4.5.1",
+    "lint-staged": "^11.2.6",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.4.6",
+    "node-sass": "^7.0.0",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "prettier": "^2.5.1",
+    "puppeteer": "^13.1.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{js,css,md,yml, html}": "prettier --write"
+  },
+  "dependencies": {
+    "glob": "^7.2.0"
+  }
+}
