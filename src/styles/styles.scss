@@ -102,13 +102,17 @@ body {
   /* stylelint-disable-next-line */
   box-shadow: 0 1px 4px 0 RGB(60 64 67 / 30%);
 }
-.feedback__form--input {
-  width: 100%;
-  padding: 8px;
-  margin: 4px 0;
-  border: solid 1px #dfdfdf;
-  border-radius: 4px;
-  cursor: pointer;
+.feedback {
+  &__form--name,
+  &__form--mail,
+  &__form--text {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0;
+    border: solid 1px #dfdfdf;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 }
 
 .feedback__form--button {

@@ -17,7 +17,7 @@ module.exports = {
     filename: "bundle.js",
     path: resolve(`${__dirname}/dist`),
     clean: true,
-    
+
     environment: {
       arrowFunction: false,
     },
