@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= require('!html-loader!./partials/header.html').default %>
+      <main class="main-home-container">
+        <div class="main-tagline">
+          <h2 class="tagline">
+            <pre>
+Кофейная традиция глубоко укоренилась
+              во всем мире,
+хотя способы приготовления этого напитка
+              могут отличаться.</pre
+            >
+          </h2>
+        </div>
+        <div class="carousel__container">
+          <div class="carousel__container-track">
+            <img
+              src="../assets/beans.jpg"
+              alt="img"
+              width="285px"
+              height="189px"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+    <%= require('!html-loader!./partials/footer.html').default %>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обратная связь</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= require('!html-loader!./partials/header.html').default %>
+      <main class="main-feedback-container">
+        <h2 class="feedback__header">Форма обратной связи</h2>
+        <form class="feedback__form">
+          <input
+            class="feedback__form--input"
+            type="text"
+            placeholder="Введите Ваше имя"
+          />
+          <input
+            class="feedback__form--input"
+            type="text"
+            placeholder="E-mail"
+          />
+          <input
+            class="feedback__form--input"
+            type="text"
+            placeholder="Введите сообщение"
+            <
+          />
+          <button class="feedback__form--button">Отправить</button>
+        </form>
+      </main>
+    </div>
+    <%= require('!html-loader!./partials/footer.html').default %>
+  </body>
+</html>

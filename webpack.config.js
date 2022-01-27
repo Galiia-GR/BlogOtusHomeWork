@@ -1,25 +1,23 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-const { NODE_ENV } = process.env;
-
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
+const { NODE_ENV } = process.env;
+
 const glob = require("glob");
 
-const pages = glob.sync("pages/*.html");
+const pages = glob.sync("src/pages/*.html");
 
 module.exports = {
-  entry: {
-    index: resolve(__dirname, "./src/index.js"),
-  },
+  entry: resolve(__dirname, "src/index.js"),
 
   output: {
     filename: "bundle.js",
     path: resolve(`${__dirname}/dist`),
     clean: true,
+    
     environment: {
       arrowFunction: false,
     },
@@ -51,11 +49,17 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg)$/i,
         type: "asset/resource",
         generator: {
-          filename: "./image/[contenthash][ext]",
+          filename: "./images/[contenthash][ext]",
         },
       },
       {
-        test: /\.html$/i,
+        // https://webpack.js.org/guides/asset-modules/#replacing-inline-loader-syntax
+        resourceQuery: /raw/,
+        type: "asset/source",
+      },
+      {
+        // https://webpack.js.org/loaders/html-loader/#usage
+        resourceQuery: /template/,
         loader: "html-loader",
       },
     ],
@@ -64,19 +68,14 @@ module.exports = {
   mode: NODE_ENV === "production" ? "production" : "development",
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      chunks: ["index", "common"],
-    }),
-
-    ...pages.map((el) => {
-      const file = el.match(/(\w+)(?=\.html)/im);
-      return new HtmlWebpackPlugin({
-        filename: el.replace(/^.\/src\//, ""),
-        template: el,
-        chunks: file,
-      });
-    }),
+    ...pages.map(
+      (file) =>
+        new HtmlWebpackPlugin({
+          filename: file.replace(/^src\/pages\//, ""),
+          template: file,
+          inject: true,
+        })
+    ),
 
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
