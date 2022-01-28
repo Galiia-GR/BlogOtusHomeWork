@@ -82,7 +82,7 @@ body {
   padding-right: 45px;
   padding-left: 45px;
   color: $title;
-  margin-top: -100px;
+  margin-top: -20px;
   height: 100px;
 
   &__info-email,
@@ -133,4 +133,36 @@ body {
   background: white;
   /* stylelint-disable-next-line */
   box-shadow: 0 1px 4px 0 RGB(60 64 67 / 30%);
+}
+
+.carousel__container {
+  display: block;
+  margin: auto;
+  max-width: 800px;
+  margin-top: -150px;
+  position: relative;
+}
+.carousel__container-track {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+.carousel__container-track--next {
+  margin-top: -300px;
+  position: absolute;
+  left: 100%;
+  transform: translate(-50%, 25%);
+  font-size: 50px;
+  color: orange;
+  cursor: pointer;
+}
+.carousel__container-track--prev {
+  margin-top: -300px;
+  position: absolute;
+  right: 100%;
+  transform: translate(-50%, 25%);
+  font-size: 50px;
+  color: orange;
+  cursor: pointer;
 }

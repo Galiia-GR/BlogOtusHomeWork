@@ -18,25 +18,24 @@
         <div class="main-tagline">
           <h2 class="tagline">
             <pre>
-Кофейная традиция глубоко укоренилась
-              во всем мире,
-хотя способы приготовления этого напитка
-              могут отличаться.</pre
+
+          Кофейная традиция глубоко укоренилась
+                      во всем мире,
+            хотя способы приготовления этого напитка
+                      могут отличаться.</pre
             >
           </h2>
         </div>
         <div class="carousel__container">
           <div class="carousel__container-track">
-            <img
-              src="../assets/beans.jpg"
-              alt="img"
-              width="285px"
-              height="189px"
-            />
+            <img src="<%= require('../assets/beans.jpg') %>" alt="img1" />
           </div>
+          <a class="carousel__container-track--prev">&#10094;</a>
+          <a class="carousel__container-track--next">&#10095;</a>
         </div>
       </main>
     </div>
+
     <%= require('!html-loader!./partials/footer.html').default %>
   </body>
 </html>
