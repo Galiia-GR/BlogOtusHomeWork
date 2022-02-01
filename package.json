@@ -52,6 +52,7 @@
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.4.6",
     "node-sass": "^7.0.0",
+    "postcss": "^8.4.6",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.2.3",
