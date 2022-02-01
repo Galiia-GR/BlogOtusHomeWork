@@ -19,4 +19,13 @@ jobs:
 
       - name: Lint test
         run: |
+          npm run dev &>/dev/null &
           npm run test
+
+      - name: Archive artifacts for style tests
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: styles-tests-artifacts
+          path: |
+            style-tests
